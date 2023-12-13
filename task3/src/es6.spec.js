@@ -39,9 +39,41 @@ describe('es6', () => {
     describe('#Dictionary', () => {
         it('экземпляр класса создается', () => {
             const dic = new core.Dictionary();
-
-            // TODO
             assert.strictEqual(!!dic, true);
+        });
+        it('работает set', () => {
+            const dic = new core.Dictionary();
+            dic.set('key', 'word');
+
+            assert.strictEqual(dic.get('key'), 'word');
+            assert.strictEqual(dic.set(123, 'word'), false);
+            assert.strictEqual(dic.set('key'), false);
+        });
+        it('работает get', () => {
+            const dic = new core.Dictionary();
+            dic.set('key', 'word');
+            dic.set('newkey', 'newword');
+
+            assert.strictEqual(dic.get('key'), 'word');
+            assert.strictEqual(dic.get('newkey'), 'newword');
+            assert.strictEqual(dic.get('noword'), undefined);
+        });
+        it('работает удаление', () => {
+            const dic = new core.Dictionary();
+            dic.set('key', 'word');
+            dic.set('newkey', 'newword');
+
+            assert.strictEqual(dic.delete('key'), true);
+            assert.strictEqual(dic.delete('noword'), false);
+            assert.strictEqual(dic.get('key'), undefined);
+        });
+        it('работает получение словаря', () => {
+            const dic = new core.Dictionary();
+            dic.set('key', 'word');
+            dic.set('newkey', 'newword');
+
+            const dictionary = dic.getDictionary();
+            assert.deepStrictEqual(dictionary, ['key', 'newkey']);
         });
     });
 });
