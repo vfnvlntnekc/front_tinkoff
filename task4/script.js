@@ -2,34 +2,9 @@ let globalCards = localStorage.getItem('cards') ? JSON.parse(localStorage.getIte
 console.log(globalCards);
 const API_URL = 'http://localhost:3002';
 
-async function loadData() {
-    const loaderBtn = document.querySelector('.loader-btn');
-    loaderBtn.classList.add('loading');
-  
-    try {
-      const data = await fetchData();
-      console.log(data);
-    } catch (error) {
-      console.error('Error loading data:', error);
-    } finally {
-      loaderBtn.classList.remove('loading');
-    }
-}
-
 function saveCards(){
     localStorage.removeItem('cards');
     localStorage.setItem('cards', JSON.stringify(globalCards));
-}
-
-async function getCards() {
-    try {
-      const response = await fetch(`${API_URL}/items`);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error('Error fetching cards:', error);
-      throw error;
-    }
 }
 
 async function saveCard(card) {
@@ -83,14 +58,30 @@ async function updateCreatorName() {
     }
   }updateCreatorName();
 
-function fillCards() {
-    const showcase = document.querySelector('.showcase__inner');
 
+async function getCards() {
+    try {
+      const response = await fetch(`${API_URL}/items`);
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error('Error fetching cards:', error);
+      throw error;
+    }
+}
+
+
+async function fillCards() {
+try {
+    const cards = await getCards();
+
+    const showcase = document.querySelector('.showcase__inner');
     showcase.innerHTML = '';
-    globalCards.forEach(elem => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `<div class="card__header">
+
+    cards.forEach(elem => {
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `<div class="card__header">
             <div class="card__id">
                 <p id="card-id">ID: ${elem.id}</p>
             </div>
@@ -113,15 +104,19 @@ function fillCards() {
         </div>
     </div>`;
 
-        card.addEventListener('click', function(event) {
-            if (!event.target.classList.contains('card-edit-btn')) {
-                card.classList.toggle('card_chosen');
-            }
-        });
-
-        showcase.appendChild(card);
+    card.addEventListener('click', function(event) {
+        if (!event.target.classList.contains('card-edit-btn')) {
+        card.classList.toggle('card_chosen');
+        }
     });
+
+    showcase.appendChild(card);
+    });
+} catch (error) {
+    console.error('Error filling cards from server:', error);
 }
+}
+      
 fillCards();
 
 async function addCard() {
