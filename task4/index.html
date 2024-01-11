@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="heraldic.svg" type="image/svg+xml">        
+        <title>Музыкальные треки</title>
+    </head>
+
+    <body>
+        <header class="header">
+            <a id="creatorName">Имя создателя</a>
+        <button class="header-but" onclick="fillCards()">
+            Все треки
+        </button>
+        </header>
+        <div class="container">
+            <div class="left">
+                <form id="productForm">
+                    <div class="new-track__title">
+                        <p>Добавить трек</p>
+                    </div>
+                    <input
+                        class="new-track__card-data"
+                        type="text"
+                        id="artist"
+                        placeholder="Исполнитель"
+                        required
+                    />
+                    <input
+                        class="new-track__card-data"
+                        type="text"
+                        id="name"
+                        placeholder="Название трека"
+                        required
+                    />
+                    <textarea
+                        class="new-track__card-data"
+                        id="info"
+                        placeholder="Дополнительные сведения"
+                    ></textarea>
+                    <input
+                        class="new-track__card-data"
+                        type="text"
+                        id="url"
+                        placeholder="Обложка альбома"
+                        required
+                    />
+                    <input
+                        class="new-track__card-data"
+                        type="text"
+                        id="id"
+                        placeholder="Код трека"
+                        required
+                    />
+                    <input
+                        type="text"
+                        class="new-track__card-data"
+                        id="album"
+                        placeholder="Альбом"
+                        required
+                    />
+                    <input
+                        type="button"
+                        class="new-track__add-btn"
+                        value="Добавить"
+                        onclick="addCard()"
+                    />
+                    <input
+                        type="button"
+                        class="new-track__add-btn btn_hidden"
+                        value="Сохранить"
+                        onclick="changeCard()"
+                    />
+                </form>
+            </div>
+            <div class="right">
+                <div class="showcase">
+                    <div class="showcase__header">
+                        <div class="showcase__title">
+                            <p>Список треков</p>
+                        </div>
+                        <button class="delete-but" onclick="deleteCardScript()">
+                            Удалить
+                        </button>
+                    </div>
+                    <div class="showcase__inner"></div>
+                </div>
+            </div>
+        </div>
+        <div class="loader">
+            <div class="loader__inner"></div>
+        </div>
+        <script src="./script.js"></script>
+    </body>
+</html>

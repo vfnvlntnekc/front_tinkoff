@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "artist": "Metallica",
+      "name": "Fade To Black",
+      "info": "1984",
+      "url": "https://sun9-21.userapi.com/impf/IPJ50Z9sE4vsmzN1tpYRbq3MC4nEiRA7HHwkrg/O1dC61SCWhg.jpg?size=673x662&quality=96&sign=6b22371ca3930900b51d6d631ead6363&type=album",
+      "id": "0",
+      "album": "Ride The Ligthning"
+    },
+    {
+      "artist": "Aerosmith",
+      "name": "Dream On",
+      "info": "1975",
+      "url": "https://sun9-50.userapi.com/impf/swL6d6bH_9cfZhItXSz9UycgvlcpmcGiRxhUfg/KJb0MdspMXY.jpg?size=714x760&quality=96&sign=8f225fcbe7fefbba00a5b39a5afe543d&type=album",
+      "id": "1",
+      "album": "Aerosmith"
+    }
+  ],
+  "creatorInfo": {
+    "name": "Быкова Дарья",
+    "group": "6407",
+    "repo": "https://github.com/vfnvlntnekc/front_tinkoff"
+  }
+}
