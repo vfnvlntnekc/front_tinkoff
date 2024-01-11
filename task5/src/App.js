@@ -5,6 +5,7 @@ import AppLayoutDetails from './components/AppLayoutDetails';
 import AppLayoutAdd from './components/AppLayoutAdd';
 import AppLayoutEditForm from './components/AppLayoutEditForm';
 import { Layout } from 'antd';
+import MovieFilter from './components/MovieFilter';
 
 const { Header } = Layout;
 

@@ -13,8 +13,8 @@ const AppLayout = () => {
       <div style={{ display: 'flex', paddingTop: '100px' }}>
         <div style={{ flex: 1, paddingRight: '20px', paddingLeft: '20px' }}>
           <MovieFilter onFilter={handleFilter} />
-          <MovieList />
-        </div>
+      </div>
+        
         <div style={{ flex: 2, paddingRight: '20px', paddingLeft: '20px'}}>
         </div>
       </div>
