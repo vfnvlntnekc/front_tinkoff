@@ -1,3 +1,9 @@
+npm install
+npm install -g json-server
+json-server db.json --port 3002
+
+Для html я использовала только LiveServer
+
 Данное приложение представляет собой страничку добавления, изменения и просмотра карточек музыкальных треков
 
 ![image](https://github.com/vfnvlntnekc/front_tinkoff/assets/79076201/b4f55690-11ae-4fda-a226-bcde2b6c7be2)
@@ -17,4 +23,4 @@
 ![image](https://github.com/vfnvlntnekc/front_tinkoff/assets/79076201/8915300b-e2b6-46f1-a1a9-fd6209b6a43c)
 ![image](https://github.com/vfnvlntnekc/front_tinkoff/assets/79076201/127b5cc9-f145-4ba2-a70d-b6e464ed25e8)
 
-Для запуска я использовала только LiveServer
+
